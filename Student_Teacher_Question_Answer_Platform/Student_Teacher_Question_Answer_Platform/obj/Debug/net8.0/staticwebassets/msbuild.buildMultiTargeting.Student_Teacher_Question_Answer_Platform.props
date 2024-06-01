@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Student_Teacher_Question_Answer_Platform.props" />
+</Project>
