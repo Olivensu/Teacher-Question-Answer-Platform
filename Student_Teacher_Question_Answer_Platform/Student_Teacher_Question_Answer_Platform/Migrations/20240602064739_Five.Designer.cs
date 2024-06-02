@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Student_Teacher_Question_Answer_Platform.Services;
 
@@ -11,9 +12,11 @@ using Student_Teacher_Question_Answer_Platform.Services;
 namespace Student_Teacher_Question_Answer_Platform.Migrations
 {
     [DbContext(typeof(ApplicationDbContest))]
-    partial class ApplicationDbContestModelSnapshot : ModelSnapshot
+    [Migration("20240602064739_Five")]
+    partial class Five
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,21 +54,21 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "91a21970-6e1e-43bd-bad3-227bf7285232",
+                            Id = "1f7378e8-9f23-4011-9e29-96c9b03aff57",
                             Name = "moderator",
-                            NormalizedName = "moderator"
+                            NormalizedName = "MODERATOR"
                         },
                         new
                         {
-                            Id = "c3a6185c-5a4d-4c9e-a68b-8e455e872f23",
+                            Id = "6ffb8b8e-9f0c-4fb5-a1d9-4484232c9e3e",
                             Name = "student",
-                            NormalizedName = "student"
+                            NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "3be207d5-e2e1-4811-9fa7-63b337c909c0",
+                            Id = "aba2f79e-be0e-44a2-b162-44b904972bbe",
                             Name = "teacher",
-                            NormalizedName = "teacher"
+                            NormalizedName = "TEACHER"
                         });
                 });
 
@@ -235,6 +238,10 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

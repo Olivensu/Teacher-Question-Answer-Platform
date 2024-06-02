@@ -51,16 +51,17 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
+            <!--<div class="row mb-3">
                 <label class="col-sm-4 col-form-label">Role</label>
                 <div class="col-sm-8">
                     <select asp-for="Input.Role" class="form-control">
+                        <option >Select Your Role</option>
                         <option value="student">Student</option>
                         <option value="teacher">Teacher</option>
                     </select>
                     <span asp-validation-for="Input.Role" class="text-danger"></span>
                 </div>
-            </div>
+            </div>-->
 
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">Password</label>
@@ -81,6 +82,9 @@
             <div class="row mb-3">
                 <div class="offset-sm-4 col-sm-4 d-grid">
                     <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-danger" href="/" role="button">Cancel</a>
                 </div>
             </div>
 

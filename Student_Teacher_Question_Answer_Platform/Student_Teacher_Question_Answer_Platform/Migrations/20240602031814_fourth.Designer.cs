@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Student_Teacher_Question_Answer_Platform.Services;
 
@@ -11,9 +12,11 @@ using Student_Teacher_Question_Answer_Platform.Services;
 namespace Student_Teacher_Question_Answer_Platform.Migrations
 {
     [DbContext(typeof(ApplicationDbContest))]
-    partial class ApplicationDbContestModelSnapshot : ModelSnapshot
+    [Migration("20240602031814_fourth")]
+    partial class fourth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,19 +54,19 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "91a21970-6e1e-43bd-bad3-227bf7285232",
+                            Id = "2e6f375c-6db5-4f07-b3ca-b08249a94094",
                             Name = "moderator",
                             NormalizedName = "moderator"
                         },
                         new
                         {
-                            Id = "c3a6185c-5a4d-4c9e-a68b-8e455e872f23",
+                            Id = "bd134f52-b53b-4bdc-adf8-bdbca9cb47a7",
                             Name = "student",
                             NormalizedName = "student"
                         },
                         new
                         {
-                            Id = "3be207d5-e2e1-4811-9fa7-63b337c909c0",
+                            Id = "7000e1b0-3110-4ac5-bad8-633da18338ee",
                             Name = "teacher",
                             NormalizedName = "teacher"
                         });
@@ -195,9 +198,6 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -245,6 +245,9 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<DateTime>("cratedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

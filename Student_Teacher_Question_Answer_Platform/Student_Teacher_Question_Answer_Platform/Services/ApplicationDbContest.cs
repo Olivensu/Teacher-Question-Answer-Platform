@@ -7,6 +7,7 @@ namespace Student_Teacher_Question_Answer_Platform.Services
 {
     public class ApplicationDbContest : IdentityDbContext<ApplicationUser>
     {
+
         public ApplicationDbContest(DbContextOptions options) : base(options)
         {
 

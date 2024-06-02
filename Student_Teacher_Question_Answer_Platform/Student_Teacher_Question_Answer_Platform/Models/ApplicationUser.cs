@@ -9,10 +9,6 @@ namespace Student_Teacher_Question_Answer_Platform.Models
 
         public string Address { get; set; } = "";
 
-        public string Number { get; set; } = "";
-
-        public string Role { get; set; }
-
         public DateTime CreatedAt { get; set; }
     }
 }
