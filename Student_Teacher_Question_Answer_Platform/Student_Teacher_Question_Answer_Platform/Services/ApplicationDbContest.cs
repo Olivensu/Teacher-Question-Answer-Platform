@@ -13,6 +13,8 @@ namespace Student_Teacher_Question_Answer_Platform.Services
 
         }
 
+        public DbSet<Question> Questions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

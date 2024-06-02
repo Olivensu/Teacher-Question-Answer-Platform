@@ -8,3 +8,70 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
+<a href="/Teacher">Teacher</a>
+<br />
+<li class="m-2">
+    <a class="btn btn-primary" asp-page="Questions/Create">Create</a>
+</li>
+
+<h1>Questions</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var question in Model.Questions)
+        {
+            <tr>
+                <td>@question.Title</td>
+                <td>@question.Content</td>
+                <td>@question.User.FirstName @question.User.LastName</td>
+                <td>@question.CreatedAt.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pagination">
+    <ul class="pagination">
+        @if (Model.PageNumber > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-page="./Index" asp-route-PageNumber="@(Model.PageNumber - 1)">Previous</a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                <a class="page-link" asp-page="./Index" asp-route-PageNumber="@i">@i</a>
+            </li>
+        }
+        @if (Model.PageNumber < Model.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-page="./Index" asp-route-PageNumber="@(Model.PageNumber + 1)">Next</a>
+            </li>
+        }
+    </ul>
+</div>
+
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+    .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+    }
+</style>
