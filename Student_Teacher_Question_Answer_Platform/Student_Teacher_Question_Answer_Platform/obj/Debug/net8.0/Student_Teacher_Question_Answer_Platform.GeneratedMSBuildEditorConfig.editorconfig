@@ -54,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/Answer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5zd2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/QuestionCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3Rpb25DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/QuestionsDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3Rpb25zRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/Shared/_LoginPartial.cshtml]

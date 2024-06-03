@@ -1,0 +1,21 @@
+﻿@page
+@model Student_Teacher_Question_Answer_Platform.Pages.QuestionsDetailsModel
+@{
+    ViewData["Title"] = "Question Details";
+}
+
+<h1>@Model.StudentQuestion.Title</h1>
+<p>@Model.StudentQuestion.Content</p>
+<p>Asked by @Model.StudentQuestion.UserName on @Model.StudentQuestion.CreatedAt</p>
+
+<h2>Answers</h2>
+
+@foreach (var answer in Model.Answers)
+{
+    <div class="answer">
+        <p>@answer.Content</p>
+        <p>Answered by @answer.UserName on @answer.CreatedAt</p>
+    </div>
+}
+
+<a asp-page="/Answer" asp-route-questionId="@Model.StudentQuestion.Id" class="btn btn-primary">Submit an Answer</a>

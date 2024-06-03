@@ -1,5 +1,6 @@
 ﻿@page
 @model IndexModel
+@using X.PagedList.Mvc.Core
 @{
     ViewData["Title"] = "Home page";
 }
@@ -18,5 +19,39 @@
     <a class="btn btn-primary" asp-page="/ProductCreate">ProductCreate</a>
 </li>
 
-<h1>Questions</h1>
+<h1>All Questions</h1>
+
+@if (!Model.StudentQuestions.Any())
+{
+    <div class="alert alert-info">No questions have been posted yet.</div>
+}
+else
+{
+    <div class="list-group">
+        @foreach (var question in Model.StudentQuestions)
+        {
+            <a asp-page="/QuestionsDetails" asp-route-id="@question.Id" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">@Html.DisplayFor(modelItem => question.Title)</h5>
+                <p class="mb-1">@Html.DisplayFor(modelItem => question.Content)</p>
+                <small class="text-muted">Asked by @Html.DisplayFor(modelItem => question.UserName) on @Html.DisplayFor(modelItem => question.CreatedAt)</small>
+                <a  class="btn btn-primary">View Details</a>
+            </a>
+        }
+    </div>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            @Html.PagedListPager(Model.StudentQuestions, page => Url.Page("/AllQuestions", new { page }), new PagedListRenderOptions
+   {
+       LiElementClasses = new[] { "page-item" },
+       PageClasses = new[] { "page-link" },
+       ActiveLiElementClass = "active"
+   })
+        </ul>
+    </nav>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
 

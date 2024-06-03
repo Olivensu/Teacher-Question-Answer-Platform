@@ -16,6 +16,8 @@ namespace Student_Teacher_Question_Answer_Platform.Services
         public DbSet<Question> Questions { get; set; }
         public DbSet<Questions> QuestionsList { get; set; }
 
+        public DbSet<Answer> Answers { get; set; }
+
         public DbSet<StudentQuestions> StudentQuestions { get; set; }
 
         public DbSet<Product> Products { get; set; }

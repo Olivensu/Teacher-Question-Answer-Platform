@@ -1,0 +1,25 @@
+﻿@page
+@model Student_Teacher_Question_Answer_Platform.Pages.AnswerModel
+@{
+    ViewData["Title"] = "Submit Answer";
+}
+
+<h1>Submit Answer</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Answer.UserName"></label>
+        <input asp-for="Answer.UserName" class="form-control" />
+        <span asp-validation-for="Answer.UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Answer.Content"></label>
+        <textarea asp-for="Answer.Content" class="form-control"></textarea>
+        <span asp-validation-for="Answer.Content" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

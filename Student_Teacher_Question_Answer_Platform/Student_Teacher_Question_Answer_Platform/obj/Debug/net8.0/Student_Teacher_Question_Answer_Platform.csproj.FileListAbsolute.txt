@@ -285,3 +285,5 @@ D:\Teacher Question & Answer Platform ASP.Net core\Student_Teacher_Question_Answ
 D:\Teacher Question & Answer Platform ASP.Net core\Student_Teacher_Question_Answer_Platform\Student_Teacher_Question_Answer_Platform\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\Teacher Question & Answer Platform ASP.Net core\Student_Teacher_Question_Answer_Platform\Student_Teacher_Question_Answer_Platform\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\Teacher Question & Answer Platform ASP.Net core\Student_Teacher_Question_Answer_Platform\Student_Teacher_Question_Answer_Platform\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\Teacher Question & Answer Platform ASP.Net core\Student_Teacher_Question_Answer_Platform\Student_Teacher_Question_Answer_Platform\bin\Debug\net8.0\X.PagedList.dll
+D:\Teacher Question & Answer Platform ASP.Net core\Student_Teacher_Question_Answer_Platform\Student_Teacher_Question_Answer_Platform\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll

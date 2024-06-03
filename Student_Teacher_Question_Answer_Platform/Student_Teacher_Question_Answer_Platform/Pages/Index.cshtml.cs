@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace Student_Teacher_Question_Answer_Platform.Pages
 {
@@ -19,24 +20,20 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             _context = context;
         }
 
-        public IList<StudentQuestions> StudentQuestions { get; set; }
+      
 
-        [BindProperty(SupportsGet = true)]
-        public int PageNumber { get; set; } = 1;
+        public IPagedList<StudentQuestions> StudentQuestions { get; set; }
 
-        public int TotalPages { get; set; }
-
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int? pageNumber)
         {
             int pageSize = 5;
-            //var questionsQuery = _context.StudentQuestions.Include(q => q.User).OrderByDescending(q => q.CreatedAt);
-            //int totalQuestions = await questionsQuery.CountAsync();
-            //TotalPages = (int)Math.Ceiling(totalQuestions / (double)pageSize);
+            int pageIndex = pageNumber ?? 1;
 
-            //StudentQuestions = await questionsQuery
-                //.Skip((PageNumber - 1) * pageSize)
-                //.Take(pageSize)
-                //.ToListAsync();
+            StudentQuestions = await _context.StudentQuestions
+                .OrderByDescending(q => q.CreatedAt)
+                .ToPagedListAsync(pageIndex, pageSize);
+
+            return Page();
         }
     }
 }
