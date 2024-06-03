@@ -66,8 +66,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/Questions/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3Rpb25zXENyZWF0ZS5jc2h0bWw=
+[D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/ProductCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/QuestionCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVlc3Rpb25DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Teacher Question & Answer Platform ASP.Net core/Student_Teacher_Question_Answer_Platform/Student_Teacher_Question_Answer_Platform/Pages/Shared/_LoginPartial.cshtml]

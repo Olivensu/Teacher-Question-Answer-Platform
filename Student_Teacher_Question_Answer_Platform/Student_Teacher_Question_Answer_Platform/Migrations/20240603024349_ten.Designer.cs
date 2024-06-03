@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Student_Teacher_Question_Answer_Platform.Services;
 
@@ -11,9 +12,11 @@ using Student_Teacher_Question_Answer_Platform.Services;
 namespace Student_Teacher_Question_Answer_Platform.Migrations
 {
     [DbContext(typeof(ApplicationDbContest))]
-    partial class ApplicationDbContestModelSnapshot : ModelSnapshot
+    [Migration("20240603024349_ten")]
+    partial class ten
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,19 +54,19 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d03f6a69-8c93-4689-992a-26346b9e7e63",
+                            Id = "db157f8b-7e6c-43a1-ab82-11c3abe8b340",
                             Name = "moderator",
                             NormalizedName = "moderator"
                         },
                         new
                         {
-                            Id = "99dbbe59-f2b7-4527-aa7a-9a2a7ae059db",
+                            Id = "731d4de3-5188-4dcb-a642-5e1e2eeda200",
                             Name = "student",
                             NormalizedName = "student"
                         },
                         new
                         {
-                            Id = "6d64b39f-0b4a-4cb8-b2b4-f8aafc9a43d8",
+                            Id = "20c1e71a-dc96-449f-bf51-0a5ad57ba74d",
                             Name = "teacher",
                             NormalizedName = "teacher"
                         });
@@ -312,64 +315,6 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                     b.ToTable("Questions");
                 });
 
-            modelBuilder.Entity("Student_Teacher_Question_Answer_Platform.Models.Questions", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("QuestionsList");
-                });
-
-            modelBuilder.Entity("Student_Teacher_Question_Answer_Platform.Models.StudentQuestions", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("StudentQuestions");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -422,17 +367,6 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                 });
 
             modelBuilder.Entity("Student_Teacher_Question_Answer_Platform.Models.Question", b =>
-                {
-                    b.HasOne("Student_Teacher_Question_Answer_Platform.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Student_Teacher_Question_Answer_Platform.Models.Questions", b =>
                 {
                     b.HasOne("Student_Teacher_Question_Answer_Platform.Models.ApplicationUser", "User")
                         .WithMany()

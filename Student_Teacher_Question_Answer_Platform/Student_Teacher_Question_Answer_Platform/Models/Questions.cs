@@ -1,10 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Student_Teacher_Question_Answer_Platform.Models
 {
-    public class Question
+    public class Questions
     {
         [Key]
         public int Id { get; set; }
@@ -17,7 +15,7 @@ namespace Student_Teacher_Question_Answer_Platform.Models
 
         public string UserId { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; }
 
         public ApplicationUser User { get; set; }
     }
