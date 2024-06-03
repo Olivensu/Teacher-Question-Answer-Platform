@@ -18,5 +18,7 @@ namespace Student_Teacher_Question_Answer_Platform.Models
         public string UserName { get; set; }
 
         public int AnswersCount { get; set; }
+
+        public int VoteCount { get; set; }
     }
 }

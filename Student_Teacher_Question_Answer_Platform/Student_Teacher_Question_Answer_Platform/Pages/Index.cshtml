@@ -35,7 +35,9 @@ else
                     <h5 class="card-title">@question.Title</h5>
                     <p class="card-text">@question.Content</p>
                     <p class="card-text">Answers Count: @question.AnswersCount</p>
+                    <p class="card-text">Votes Count: @question.VoteCount</p>
                 </div>
+                <a asp-page="/QuestionsDetails" asp-route-id="@question.Id" class="btn btn-outline-info w-25 mx-auto">View Details</a>
             </div>
         }
     </div>

@@ -6,17 +6,31 @@
 
 <h1>@Model.StudentQuestion.Title</h1>
 <p>@Model.StudentQuestion.Content</p>
-<p>Answer - @Model.AnswersCount</p>
-<p>Asked by @Model.StudentQuestion.UserName on @Model.StudentQuestion.CreatedAt</p>
+<p>Asked by: @Model.StudentQuestion.UserName</p>
+<p>Votes: @Model.StudentQuestion.VoteCount</p>
 
-<h2>Answers</h2>
+<form method="post" asp-page-handler="VoteQuestion">
+    <input type="hidden" name="questionId" value="@Model.StudentQuestion.Id" />
+    <button type="submit" name="isUpvote" value="true">Upvote</button>
+    <button type="submit" name="isUpvote" value="false">Downvote</button>
+</form>
+
+<h2>Answers (@Model.AnswersCount)</h2>
 
 @foreach (var answer in Model.Answers)
 {
-    <div class="answer">
-        <p>@answer.Content</p>
-        <p>Answered by @answer.UserName on @answer.CreatedAt</p>
+    <div class="card mb-3">
+        <div class="card-body">
+            <p>@answer.Content</p>
+            <p>Answered by: @answer.UserName</p>
+            <p>Votes: @answer.VoteCount</p>
+
+            <form method="post" asp-page-handler="VoteAnswer">
+                <input type="hidden" name="answerId" value="@answer.Id" />
+                <button type="submit" name="isUpvote" value="true">Upvote</button>
+                <button type="submit" name="isUpvote" value="false">Downvote</button>
+            </form>
+        </div>
     </div>
 }
-
 <a asp-page="/Answer" asp-route-questionId="@Model.StudentQuestion.Id" class="btn btn-primary">Submit an Answer</a>

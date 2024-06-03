@@ -1,26 +1,25 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Student_Teacher_Question_Answer_Platform.Models
 {
-    public class Answer
+    public class Vote
     {
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        public string Content { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-
-        public string UserName { get; set; }
+        public string UserId { get; set; }
 
         public int StudentQuestionId { get; set; }
+
+        public int AnswerId { get; set; }
 
         [ForeignKey("StudentQuestionId")]
         public StudentQuestions StudentQuestion { get; set; }
 
-        public int VoteCount { get; set; }
+        [ForeignKey("AnswerId")]
+        public Answer Answer { get; set; }
+
+        public bool IsUpvote { get; set; }
     }
 }

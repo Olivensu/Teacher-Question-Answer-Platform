@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Student_Teacher_Question_Answer_Platform")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10d5c724a24f8f2f8706f7e29b5ff1aa46804175")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a037c33a3358c3f0a206d08602837ec20300546")]
 [assembly: System.Reflection.AssemblyProductAttribute("Student_Teacher_Question_Answer_Platform")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Student_Teacher_Question_Answer_Platform")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
