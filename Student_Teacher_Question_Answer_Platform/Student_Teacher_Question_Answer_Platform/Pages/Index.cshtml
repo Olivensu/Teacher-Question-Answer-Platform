@@ -30,18 +30,19 @@ else
     <div class="list-group">
         @foreach (var question in Model.StudentQuestions)
         {
-            <a asp-page="/QuestionsDetails" asp-route-id="@question.Id" class="list-group-item list-group-item-action">
-                <h5 class="mb-1">@Html.DisplayFor(modelItem => question.Title)</h5>
-                <p class="mb-1">@Html.DisplayFor(modelItem => question.Content)</p>
-                <small class="text-muted">Asked by @Html.DisplayFor(modelItem => question.UserName) on @Html.DisplayFor(modelItem => question.CreatedAt)</small>
-                <a  class="btn btn-primary">View Details</a>
-            </a>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">@question.Title</h5>
+                    <p class="card-text">@question.Content</p>
+                    <p class="card-text">Answers Count: @question.AnswersCount</p>
+                </div>
+            </div>
         }
     </div>
 
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
-            @Html.PagedListPager(Model.StudentQuestions, page => Url.Page("/AllQuestions", new { page }), new PagedListRenderOptions
+            @Html.PagedListPager(Model.StudentQuestions, page => Url.Page("/Index", new { pageNumber = page }), new PagedListRenderOptions
    {
        LiElementClasses = new[] { "page-item" },
        PageClasses = new[] { "page-link" },

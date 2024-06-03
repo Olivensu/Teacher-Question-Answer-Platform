@@ -40,7 +40,7 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             await _context.SaveChangesAsync();
 
             // Redirect to the details page of the question
-            return RedirectToPage("/QuestionDetails", new { id = questionId });
+            return RedirectToPage("/QuestionsDetails", new { id = questionId });
         }
     }
 }

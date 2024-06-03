@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Student_Teacher_Question_Answer_Platform.Services;
 
@@ -11,9 +12,11 @@ using Student_Teacher_Question_Answer_Platform.Services;
 namespace Student_Teacher_Question_Answer_Platform.Migrations
 {
     [DbContext(typeof(ApplicationDbContest))]
-    partial class ApplicationDbContestModelSnapshot : ModelSnapshot
+    [Migration("20240603134452_gag")]
+    partial class gag
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,19 +54,19 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1013c4f9-57f0-4f50-8c73-3403402e8f0a",
+                            Id = "b32aaeb6-f95e-46c1-a6bd-388a2f18a306",
                             Name = "moderator",
                             NormalizedName = "moderator"
                         },
                         new
                         {
-                            Id = "f67cc380-efa7-439d-b857-aab68fda4e19",
+                            Id = "c2987aa7-a04c-479c-b050-2bd5e9426c45",
                             Name = "student",
                             NormalizedName = "student"
                         },
                         new
                         {
-                            Id = "71539876-9ce1-4479-aa92-c6c9cdb80bcd",
+                            Id = "16567b50-3b8e-4222-9719-91e0b1d52a87",
                             Name = "teacher",
                             NormalizedName = "teacher"
                         });
@@ -456,7 +459,7 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
             modelBuilder.Entity("Student_Teacher_Question_Answer_Platform.Models.Answer", b =>
                 {
                     b.HasOne("Student_Teacher_Question_Answer_Platform.Models.StudentQuestions", "StudentQuestion")
-                        .WithMany()
+                        .WithMany("Answers")
                         .HasForeignKey("StudentQuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -484,6 +487,11 @@ namespace Student_Teacher_Question_Answer_Platform.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Student_Teacher_Question_Answer_Platform.Models.StudentQuestions", b =>
+                {
+                    b.Navigation("Answers");
                 });
 #pragma warning restore 612, 618
         }

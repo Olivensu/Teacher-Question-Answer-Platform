@@ -19,6 +19,7 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
 
         public StudentQuestions StudentQuestion { get; set; }
         public IList<Answer> Answers { get; set; }
+        public int AnswersCount { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
@@ -31,8 +32,12 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             }
 
             Answers = await _context.Answers
+
                 .Where(a => a.StudentQuestionId == id)
+
                 .ToListAsync();
+
+            AnswersCount = Answers.Count;
 
             return Page();
         }

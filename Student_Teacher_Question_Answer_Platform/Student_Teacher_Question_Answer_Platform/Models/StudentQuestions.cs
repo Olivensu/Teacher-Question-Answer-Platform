@@ -16,5 +16,7 @@ namespace Student_Teacher_Question_Answer_Platform.Models
         public DateTime CreatedAt { get; set; }
 
         public string UserName { get; set; }
+
+        public int AnswersCount { get; set; }
     }
 }
