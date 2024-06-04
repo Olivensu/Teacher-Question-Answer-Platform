@@ -6,9 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using X.PagedList;
 using Student_Teacher_Question_Answer_Platform.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Student_Teacher_Question_Answer_Platform.Pages
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContest _context;
@@ -59,6 +61,20 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             TotalQuestions = await _context.StudentQuestions.CountAsync();
 
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            var question = await _context.StudentQuestions.FindAsync(id);
+            if (question == null)
+            {
+                return NotFound();
+            }
+
+            _context.StudentQuestions.Remove(question);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage();
         }
     }
 }

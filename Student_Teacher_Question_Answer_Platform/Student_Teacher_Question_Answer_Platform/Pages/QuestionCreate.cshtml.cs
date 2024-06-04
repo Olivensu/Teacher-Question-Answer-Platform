@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -36,5 +37,7 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
 
             return RedirectToPage("Index"); // Ensure this is the correct page name
         }
+
+        
     }
 }

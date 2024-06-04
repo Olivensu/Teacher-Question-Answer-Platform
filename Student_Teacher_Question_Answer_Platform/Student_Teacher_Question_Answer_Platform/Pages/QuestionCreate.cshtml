@@ -2,7 +2,7 @@
 @model Student_Teacher_Question_Answer_Platform.Pages.QuestionCreateModel
 @{
 }
-<h1>Create Question</h1>
+<h1>Ask Question</h1>
 
 <form method="post">
     <div class="form-group">
@@ -20,7 +20,7 @@
         <textarea asp-for="StudentQuestions.Content" class="form-control"></textarea>
         <span asp-validation-for="StudentQuestions.Content" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary mt-3 ">Submit</button>
 </form>
 
 @section Scripts {

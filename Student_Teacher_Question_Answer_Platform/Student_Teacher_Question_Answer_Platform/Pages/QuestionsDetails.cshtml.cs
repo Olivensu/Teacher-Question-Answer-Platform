@@ -5,9 +5,11 @@ using Student_Teacher_Question_Answer_Platform.Services;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Student_Teacher_Question_Answer_Platform.Pages
 {
+    [Authorize]
     public class QuestionsDetailsModel : PageModel
     {
         private readonly ApplicationDbContest _context;
@@ -81,5 +83,7 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             await _context.SaveChangesAsync();
             return RedirectToPage(new { id = answer.StudentQuestionId });
         }
+
+        
     }
 }
