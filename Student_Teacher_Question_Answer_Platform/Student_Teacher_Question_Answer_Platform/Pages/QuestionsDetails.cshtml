@@ -3,19 +3,40 @@
 @{
     ViewData["Title"] = "Question Details";
 }
+<style>
+    body {
+        background-color: #f0f8ff;
+        max-width: 80%;
+        margin: 0 auto;
+        border: 1px 0px 1px 0px solid gray;
+        padding: 2px;
+    }
+</style>
 
-<h1>@Model.StudentQuestion.Title</h1>
-<p>@Model.StudentQuestion.Content</p>
-<p>Asked by: @Model.StudentQuestion.UserName</p>
-<p>Votes: @Model.StudentQuestion.VoteCount</p>
+<div>
+    <h2>@Model.StudentQuestion.Title</h2>
+    <p>Asked @Model.StudentQuestion.CreatedAt ago <span class="ms-5 text-info font-monospace">Asked by: @Model.StudentQuestion.UserName</span></p>
+    <hr />
+    
+    
+</div>
+<div class="row my-2">
+    <div class="col col-2">
+        <form method="post" asp-page-handler="VoteQuestion">
+            <input type="hidden" name="questionId" value="@Model.StudentQuestion.Id" />
+            <button class="border-0" type="submit" name="isUpvote" value="true"><img src="~/Images/up-color.png" width="50px" /></button>
+            <h4 class="fw-bold text-warning">Votes: @Model.StudentQuestion.VoteCount</h4>
+            <button class="border-0" type="submit" name="isUpvote" value="false"><img src="~/Images/down-color.png" width="50px" /></button>
+        </form>
+    </div>
+    <div class="col col-10">
+        <p>@Model.StudentQuestion.Content</p>
+    </div>
+</div>
 
-<form method="post" asp-page-handler="VoteQuestion">
-    <input type="hidden" name="questionId" value="@Model.StudentQuestion.Id" />
-    <button type="submit" name="isUpvote" value="true">Upvote</button>
-    <button type="submit" name="isUpvote" value="false">Downvote</button>
-</form>
+<hr />
 
-<h2>Answers (@Model.AnswersCount)</h2>
+<h2 class="text-muted">Answers (@Model.AnswersCount)</h2>
 
 @foreach (var answer in Model.Answers)
 {

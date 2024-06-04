@@ -7,39 +7,14 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
-        if (User.IsInRole("moderator"))
-        {
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown">Moderator</a>
+                <a href="#" class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown">@User.Identity.Name</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" asp-area="Identity" asp-page="/User">Profile</a></li>
-                    <li><hr class="dropdown-divider" /> </li>
+                <li><a class="dropdown-item" asp-page="/User">User</a></li>
+                <li><hr class="dropdown-divider" /> </li>
                     <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
                 </ul>
             </li>
-        }
-        else if (User.IsInRole("student"))
-        {
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown">Student</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" asp-page="/User">Profile</a></li>
-                    <li><hr class="dropdown-divider" /> </li>
-                    <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
-                </ul>
-            </li>
-        }
-        else if (User.IsInRole("teacher"))
-        {
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown">Teacher</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" asp-area="Identity" asp-page="/User">Profile</a></li>
-                    <li><hr class="dropdown-divider" /> </li>
-                    <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Logout</a></li>
-                </ul>
-            </li>
-        }
     }
     else
     {

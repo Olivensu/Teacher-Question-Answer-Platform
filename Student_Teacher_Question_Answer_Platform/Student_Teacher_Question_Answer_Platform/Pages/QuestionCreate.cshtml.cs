@@ -30,7 +30,7 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             {
                 return Page();
             }
-
+            StudentQuestions.CreatedAt = DateTime.Now;
             _context.StudentQuestions.Add(StudentQuestions);
             await _context.SaveChangesAsync();
 

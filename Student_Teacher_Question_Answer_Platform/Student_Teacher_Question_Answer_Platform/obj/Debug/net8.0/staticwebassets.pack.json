@@ -181,6 +181,14 @@
       "PackagePath": "staticwebassets\\Student_Teacher_Question_Answer_Platform.bundle.scp.css"
     },
     {
+      "Id": "D:\\Teacher Question & Answer Platform ASP.Net core\\Student_Teacher_Question_Answer_Platform\\Student_Teacher_Question_Answer_Platform\\wwwroot\\Images\\down-color.png",
+      "PackagePath": "staticwebassets\\Images\\down-color.png"
+    },
+    {
+      "Id": "D:\\Teacher Question & Answer Platform ASP.Net core\\Student_Teacher_Question_Answer_Platform\\Student_Teacher_Question_Answer_Platform\\wwwroot\\Images\\up-color.png",
+      "PackagePath": "staticwebassets\\Images\\up-color.png"
+    },
+    {
       "Id": "D:\\Teacher Question & Answer Platform ASP.Net core\\Student_Teacher_Question_Answer_Platform\\Student_Teacher_Question_Answer_Platform\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
