@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Student_Teacher_Question_Answer_Platform.Models;
@@ -5,6 +6,7 @@ using Student_Teacher_Question_Answer_Platform.Services;
 
 namespace Student_Teacher_Question_Answer_Platform.Pages
 {
+    [Authorize]
     public class ProductCreateModel : PageModel
     {
         private readonly ApplicationDbContest _context;

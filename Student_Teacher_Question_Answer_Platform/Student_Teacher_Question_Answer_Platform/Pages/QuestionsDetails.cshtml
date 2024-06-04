@@ -39,20 +39,45 @@
 <div class="pb-5 mb-5">
     @foreach (var answer in Model.Answers)
     {
-        <div class="row my-3 border-1 border-info rounded bg-success bg-opacity-10 p-3">
-            <div class="col col-2">
-                <form method="post" asp-page-handler="VoteAnswer">
-                    <input type="hidden" name="answerId" value="@answer.Id" />
-                    <button class="border-0" type="submit" name="isUpvote" value="true"><img src="~/Images/up-color.png" width="50px" /></button>
-                    <h4 class="fw-bold text-warning">Votes: @answer.VoteCount</h4>
-                    <button class="border-0" type="submit" name="isUpvote" value="false"><img src="~/Images/down-color.png" width="50px" /></button>
-                </form>
+        if (User.IsInRole("student") || User.IsInRole("teacher"))
+        {
+            <div class="row my-3 border-1 border-info rounded bg-success bg-opacity-10 p-3">
+                <div class="col col-2">
+                    <form method="post" asp-page-handler="VoteAnswer">
+                        <input type="hidden" name="answerId" value="@answer.Id" />
+                        <button class="border-0" type="submit" name="isUpvote" value="true"><img src="~/Images/up-color.png" width="50px" /></button>
+                        <h4 class="fw-bold text-warning">Votes: @answer.VoteCount</h4>
+                        <button class="border-0" type="submit" name="isUpvote" value="false"><img src="~/Images/down-color.png" width="50px" /></button>
+                    </form>
+                </div>
+                <div class="col col-10">
+                    <p>@answer.Content</p>
+                    <p class="my-2 text-info font-monospace">Answered by: @answer.UserName</p>
+                </div>
             </div>
-            <div class="col col-10">
-                <p>@answer.Content</p>
-                <p class="my-2 text-info font-monospace">Answered by: @answer.UserName</p>
+        }
+        else if (User.IsInRole("moderator"))
+        {
+            <div class="row my-3 border-1 border-info rounded bg-success bg-opacity-10 p-3">
+                <div class="col col-2">
+                    <form method="post" asp-page-handler="VoteAnswer">
+                        <input type="hidden" name="answerId" value="@answer.Id" />
+                        <button class="border-0" type="submit" name="isUpvote" value="true"><img src="~/Images/up-color.png" width="50px" /></button>
+                        <h4 class="fw-bold text-warning">Votes: @answer.VoteCount</h4>
+                        <button class="border-0" type="submit" name="isUpvote" value="false"><img src="~/Images/down-color.png" width="50px" /></button>
+                    </form>
+                </div>
+                <div class="col col-9">
+                    <p>@answer.Content</p>
+                    <p class="my-2 text-info font-monospace">Answered by: @answer.UserName <span class="ms-3">Created At: @answer.CreatedAt</span></p>
+                </div>
+                <div class="col col-1">
+                    <form method="post" asp-page-handler="DeleteAnswer" asp-route-answerId="@answer.Id">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        }
 
     }
     @if (User.IsInRole("teacher"))

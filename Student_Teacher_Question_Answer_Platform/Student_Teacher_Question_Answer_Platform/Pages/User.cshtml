@@ -4,24 +4,26 @@
 }
 
 <h2 class="text-center">Welcome to your account</h2>
-<div>
-    Id: @Model.appUser?.Id
-</div>
-<div>
-    First Name: @Model.appUser?.FirstName
-</div>
-<div>
-    Last Name: @Model.appUser?.LastName
-</div>
-<div>
-    Email: @Model.appUser?.Email
-</div>
-<div>
-    Address: @Model.appUser?.Address
-</div>
-<div>
-    Phone: @Model.appUser?.PhoneNumber
-</div>
-<div>
-    Created At: @Model.appUser?.CreatedAt.ToString("MM/dd/yyyy")
+<div class="card bg-info p-3 w-50 mx-auto text-white h5 font-monospace">
+    <div class="">
+        Id: @Model.appUser?.Id
+    </div>
+    <div>
+        First Name: @Model.appUser?.FirstName
+    </div>
+    <div>
+        Last Name: @Model.appUser?.LastName
+    </div>
+    <div>
+        Email: @Model.appUser?.Email
+    </div>
+    <div>
+        Address: @Model.appUser?.Address
+    </div>
+    <div>
+        Phone: @Model.appUser?.PhoneNumber
+    </div>
+    <div>
+        Created At: @Model.appUser?.CreatedAt.ToString("MM/dd/yyyy")
+    </div>
 </div>

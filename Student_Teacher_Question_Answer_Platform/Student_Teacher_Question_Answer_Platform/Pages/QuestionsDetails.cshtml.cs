@@ -35,6 +35,7 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
 
             Answers = await _context.Answers
                 .Where(a => a.StudentQuestionId == id)
+                .OrderByDescending(a => a.VoteCount)
                 .ToListAsync();
 
             AnswersCount = Answers.Count;
@@ -84,6 +85,18 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             return RedirectToPage(new { id = answer.StudentQuestionId });
         }
 
-        
+        public async Task<IActionResult> OnPostDeleteAnswerAsync(int answerId)
+        {
+            var answer = await _context.Answers.FindAsync(answerId);
+            if (answer == null)
+            {
+                return NotFound();
+            }
+
+            _context.Answers.Remove(answer);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage(new { id = answer.StudentQuestionId });
+        }
     }
 }

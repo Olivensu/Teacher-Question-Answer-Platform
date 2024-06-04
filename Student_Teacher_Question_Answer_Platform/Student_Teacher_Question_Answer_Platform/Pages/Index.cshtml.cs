@@ -48,7 +48,6 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
                 })
                 .ToListAsync();
 
-            // Create a new list of StudentQuestions to include AnswersCount and VoteCount
             var pagedQuestions = questionsWithAnswersCount
                 .Select(q => {
                     q.Question.AnswersCount = q.AnswersCount;

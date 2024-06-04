@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Student_Teacher_Question_Answer_Platform.Pages
 {
+    [Authorize(Roles = "student")]
     public class QuestionCreateModel : PageModel
     {
         private readonly ApplicationDbContest _context;
@@ -35,7 +36,7 @@ namespace Student_Teacher_Question_Answer_Platform.Pages
             _context.StudentQuestions.Add(StudentQuestions);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("Index"); // Ensure this is the correct page name
+            return RedirectToPage("Index"); 
         }
 
         
